@@ -8,6 +8,7 @@ import cientifica from "./assets/images/raiz-cuadrada.png";
 import { useState, useEffect } from "react";
 
 export default function Calculator() {
+  const [activo, setActivo] = useState(false)
   const [startNumber, setStartNumber] = useState(0);
   const [number1, setNumber1] = useState("");
   const [number2, setNumber2] = useState("");
@@ -123,14 +124,18 @@ export default function Calculator() {
     }
   }
 
+
+ 
+
   return (
     <div className="myContainer">
       <div className="myNavbar">
-        <img src={expand} alt="icono" />
-        <img src={calculator} alt="icono" />
-        <img src={masHerramientas} alt="icono" />
-        <img src={conversor} alt="icono" />
-        <img src={menu} alt="icono" />
+
+        <img name="expand" src={expand} alt="icono" />
+        <img name="calculator" src={calculator} alt="icono" />
+        <img name="tools" src={masHerramientas} alt="icono" />
+        <img name="convert" src={conversor} alt="icono" />
+        <img name="menu" src={menu} alt="icono" />
       </div>
       <div className="myDisplay">
         <div
