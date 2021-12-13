@@ -8,7 +8,6 @@ import cientifica from "./assets/images/raiz-cuadrada.png";
 import { useState, useEffect } from "react";
 
 export default function Calculator() {
-  const [activo, setActivo] = useState(false)
   const [startNumber, setStartNumber] = useState(0);
   const [number1, setNumber1] = useState("");
   const [number2, setNumber2] = useState("");
@@ -18,7 +17,7 @@ export default function Calculator() {
   useEffect(() => {
     switch (operation) {
       case "+":
-        setResult(Number(number1) + Number(number2));       
+        setResult(Number(number1) + Number(number2));
         break;
       case "-":
         setResult(Number(number1) - Number(number2));
@@ -28,14 +27,12 @@ export default function Calculator() {
         break;
       case "*":
         setResult(Number(number1) * Number(number2));
-        break;   
-                
+        break;
 
       default:
         setResult("");
     }
   }, [number2, number1, operation]);
-
 
   function clickNumber(valor) {
     if (startNumber === 0 && (valor === 0 || valor === "=")) {
@@ -99,10 +96,10 @@ export default function Calculator() {
 
   const getResult = () => {
     startNumber !== 0 ? setStartNumber(2) : setStartNumber(0);
-  
-    String(result).length > 10  ? setResult(String(result).slice(0, 11)) : console.log('ok')
-    
-   
+
+    String(result).length > 10
+      ? setResult(String(result).slice(0, 11))
+      : console.log("ok");
   };
 
   function allClear() {
@@ -124,13 +121,9 @@ export default function Calculator() {
     }
   }
 
-
- 
-
   return (
     <div className="myContainer">
       <div className="myNavbar">
-
         <img name="expand" src={expand} alt="icono" />
         <img name="calculator" src={calculator} alt="icono" />
         <img name="tools" src={masHerramientas} alt="icono" />
